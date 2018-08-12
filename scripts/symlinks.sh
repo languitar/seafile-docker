@@ -17,6 +17,6 @@ if [ ! -L ${SEAFILE_PATH}/seahub/media/CACHE ]; then
 fi
 
 # fix seafile install path symlinks
-for folder in ccnet conf logs seafile-data seahub-data seahub.db; do
+for folder in ccnet conf logs seafile-data seahub-data; do
    [ -L /opt/seafile/${folder} ] || ln -s /seafile/${folder} /opt/seafile/${folder}
 done

@@ -30,6 +30,7 @@ RUN mkdir -p /seafile "${SEAFILE_PATH}" && \
         "https://download.seadrive.org/seafile-server_${SEAFILE_VERSION}_x86-64.tar.gz" && \
     tar -xzf /tmp/seafile-server.tar.gz --strip-components=1 -C "${SEAFILE_PATH}" && \
     sed -ie '/^daemon/d' "${SEAFILE_PATH}/runtime/seahub.conf" && \
+    sed -i "s#'NAME': '%s/seahub/seahub.db' % PROJECT_ROOT#'NAME': '/seafile/seahub.db'#" "${SEAFILE_PATH}/seahub/seahub/settings.py" && \
     rm /tmp/seafile-server.tar.gz
 
 COPY etc/ /etc/

@@ -21,7 +21,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* && \
     rm -rf /var/cache/apt/*
 
-ARG version=6.3.2
+ARG version=6.3.3
 ENV SEAFILE_VERSION $version
 ENV SEAFILE_PATH "/opt/seafile/$SEAFILE_VERSION"
 
